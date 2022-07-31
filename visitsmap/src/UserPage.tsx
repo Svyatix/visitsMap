@@ -6,12 +6,9 @@ interface IUser extends React.FC {
     achievements: string[];
 }
 
-const UserPage = ({userName, poops, achievements}: IUser) => {
+const UserPage = () => {
     return (
         <>
-            <div>{userName}</div>
-            <div>{poops}</div>
-            <div>{achievements}</div>
         </>
     )
 }

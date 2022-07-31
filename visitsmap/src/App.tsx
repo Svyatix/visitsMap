@@ -11,7 +11,7 @@ import {
 
 import Stats from './Stats';
 import Map from './Map';
-
+import UserPage from './UserPage';
 const {Header, Content} = Layout; 
 export default function App() {
   return ( 
@@ -27,6 +27,7 @@ export default function App() {
                 <Route path="/" element={<Navigate to="/map"/>}/>
                 <Route path="/map" element={<Map/>}/>
                 <Route path="/stats" element={<Stats/>}/>
+                <Route path="user/:id" element={<UserPage/>}/>
             </Routes>
           </Content>
         </Layout>
