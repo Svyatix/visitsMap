@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --color-bg: #2C2C32;
+  --color-active: #0f7dc6;
+}
+
+.ant-layout-header {
+  background-color: var(--color-bg);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.ant-layout-header > a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+.ant-layout-header > a:hover {
+  text-decoration: underline;
+}
