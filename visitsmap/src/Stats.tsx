@@ -1,58 +1,44 @@
-import React from "react";
 import type { ColumnsType } from 'antd/es/table';
 import 'antd/dist/antd.css';
 import {Table} from 'antd';
 import {Link} from 'react-router-dom';
+import {getUsersList}from './Model';
 
 interface DataType {
     key: string;
-    userName: string;
-    poops: number;
-    achievements: string[];
+    username: string;
+    count: number;
+    achievements: number[];
   } 
 
-export default function Stats () {
-    const data: DataType[] = [
-        {
-          key: '1',
-          userName: 'John Brown',
-          poops: 32,
-          achievements: ['nice', 'developer']
-        },
-        {
-          key: '2',
-          userName: 'Jim Green',
-          poops: 42,
-          achievements: ['loser']
-        },
-        {
-          key: '3',
-          userName: 'Joe Black',
-          poops: 32,
-          achievements: ['cool', 'teacher']
-        }
-      ];
+  const Stats = () => {
+    const data: DataType[] = getUsersList();
       const columns: ColumnsType<DataType> = [
         {
           title: 'Name',
-          dataIndex: 'userName',
-          key: 'userName',
-          render: (text: string) => <a>{text}</a>,
+          dataIndex: 'username',
+          key: 'key',
+          render: (text: string) => <Link to="user/:id">{text}</Link>
         },
         {
           title: 'Poops',
-          dataIndex: 'poops',
-          key: 'poops',
+          dataIndex: 'count',
+          key: 'key',
         },
         {
           title: 'Achievements',
           dataIndex: 'achievements',
-          key: 'achievements',
+          key: 'key',
         }
       ];
     return (
         <>
-            <Table columns={columns} dataSource={data}/>
+            <Table 
+              pagination={false} 
+              columns={columns} 
+              dataSource={data}
+            />
         </>
     )
 }
+export default Stats 
