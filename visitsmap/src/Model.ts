@@ -1,5 +1,5 @@
 import dataBase from './db.json';
-interface IUser {
+export interface IUser {
     key: string;
     username: string;
     count: number;
@@ -17,4 +17,9 @@ export function getUsersList(): IUser[] {
         userList.push(userWithKey);
     })
     return userList;
+}
+
+export function getUserById(userId: string|undefined): IUser|undefined {
+    const userList = getUsersList();
+    return userList.find((element) => {return element.key === userId});
 }

@@ -44,3 +44,18 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# API карт 2GIS [![npm][npm-badge]][npm-link]
+
+[npm-badge]: https://img.shields.io/npm/v/2gis-maps.svg
+[npm-link]: https://www.npmjs.com/package/2gis-maps
+
+При помощи API карт вы сможете:
+* создавать интерактивные карты на веб-странице;
+* показывать на карте различные объекты (маркеры, балуны, геометрические фигуры);
+* производить поиск на карте: определять координаты геообъектов по их названиям и названия по координатам.
+
+Дополнительная информация:
+* текущая версия API карт — 2.0;
+* работает с использованием библиотеки [Leaflet](http://leafletjs.com);
+* правовая информация доступна [на сайте 2ГИС](http://law.2gis.ru/api-rules/#kart2).

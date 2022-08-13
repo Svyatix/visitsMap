@@ -1,7 +1,8 @@
 import type { ColumnsType } from 'antd/es/table';
 import 'antd/dist/antd.css';
 import {Table} from 'antd';
-import {Link} from 'react-router-dom';
+import { Button } from 'antd';
+import {useNavigate} from 'react-router-dom';
 import {getUsersList}from './Model';
 
 interface DataType {
@@ -11,14 +12,22 @@ interface DataType {
     achievements: number[];
   } 
 
+  interface IRecord {
+    key: string;
+  }
+
   const Stats = () => {
+    const navigate = useNavigate();
     const data: DataType[] = getUsersList();
+    const clickNavigate = (record: IRecord) => {
+      navigate(`/user/${record.key}`, {replace: true}); 
+    }
       const columns: ColumnsType<DataType> = [
         {
           title: 'Name',
           dataIndex: 'username',
           key: 'key',
-          render: (text: string) => <Link to="user/:id">{text}</Link>
+          render: (text: string, record: IRecord) => <Button type='link' onClick={() => {clickNavigate(record)}}>{text}</Button>
         },
         {
           title: 'Poops',
