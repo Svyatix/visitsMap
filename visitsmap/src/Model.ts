@@ -1,4 +1,5 @@
 import dataBase from './db.json';
+import achievementsList from './achivementsList';
 export interface IUser {
     key: string;
     username: string;
@@ -22,4 +23,16 @@ export function getUsersList(): IUser[] {
 export function getUserById(userId: string|undefined): IUser|undefined {
     const userList = getUsersList();
     return userList.find((element) => {return element.key === userId});
+}
+
+export function getEmojiByIds(achives: number[]): string[] {
+    let result = [];
+    for (let i in achievementsList) {
+        const achive = achievementsList[i as keyof typeof achievementsList]
+        if (achives.includes(achive.id)) {
+            result.push(achive.name);
+        }
+    }
+
+    return result;
 }

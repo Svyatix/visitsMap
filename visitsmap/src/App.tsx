@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import {Layout} from 'antd';
 import {
@@ -22,7 +21,7 @@ export default function App() {
             <Link to='/map'>Map</Link>
             <Link to='/stats'>Stats</Link>
           </Header>
-          <Content>
+          <Content style={{height: 'calc(100% - 64px)', minHeight: 'calc(100vh - 64px)'}}>
             <Routes>
                 <Route path="/" element={<Navigate to="/map"/>}/>
                 <Route path="/map" element={<Map/>}/>
